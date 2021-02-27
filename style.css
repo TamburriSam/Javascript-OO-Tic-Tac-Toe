@@ -1,13 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=RocknRoll+One&display=swap');
+
 :root {
+    /* Colors */
     --dark-color: #010626;
     --primary-color: #22A2F2;
     --secondary-color: #D98236;
     --tertiary-color: #F22816;
     --quaternary-color: #8C1818;
+    /* Fonts */
+    --main-font: 'RocknRoll One', sans-serif;
 }
 
 body {
     background-color: var(--dark-color);
+    font-family: var(--main-font);
+    color: white;
 }
 
 
@@ -30,6 +37,8 @@ body {
     height:162px;
     background-color: var(--primary-color);
     border-radius: 5px;
+    font-size:50px;
+    text-align: center;
 }
 
 #boxone {
@@ -67,4 +76,14 @@ body {
 
 #boxnine {
     grid-area: nine;
+}
+
+.select {
+    color:white;
+}
+
+.counter {
+    border: 1px solid white;
+    width:100px;
+    height:100px;
 }
