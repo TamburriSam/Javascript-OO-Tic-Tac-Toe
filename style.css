@@ -1,0 +1,70 @@
+:root {
+    --dark-color: #010626;
+    --primary-color: #22A2F2;
+    --secondary-color: #D98236;
+    --tertiary-color: #F22816;
+    --quaternary-color: #8C1818;
+}
+
+body {
+    background-color: var(--dark-color);
+}
+
+
+.container {
+    width:500px;
+    height:500px;
+    margin:auto;
+    margin-top:10%;
+    display:grid;
+    grid-template-areas: 'one two three'
+                         'four five six '
+                         'seven eight nine';
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.box {
+    border:solid 1px var(--secondary-color);
+    width:162px;
+    height:162px;
+    background-color: var(--primary-color);
+    border-radius: 5px;
+}
+
+#boxone {
+    grid-area: one;
+    background-color: var(--primary-color);
+}
+
+#boxtwo {
+    grid-area: two;
+}
+
+#boxthree {
+    grid-area: three;
+}
+
+#boxfour {
+    grid-area: four;
+}
+
+#boxfive {
+    grid-area: five;
+}
+
+#boxsix {
+    grid-area: six;
+}
+
+#boxseven {
+    grid-area: seven;
+}
+
+#boxeight {
+    grid-area: eight;
+}
+
+#boxnine {
+    grid-area: nine;
+}
