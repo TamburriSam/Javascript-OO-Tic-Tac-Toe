@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=RocknRoll+One&display=swap');
+@import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
+
 
 :root {
     /* Colors */
@@ -12,9 +14,13 @@
 }
 
 body {
-    background-color: var(--dark-color);
+    background-image: linear-gradient(to bottom, #405166 0%,#656f6f 100%);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height:100vh;
     font-family: var(--main-font);
     color: white;
+    overflow: hidden;
 }
 
 
@@ -29,6 +35,11 @@ body {
                          'seven eight nine';
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
+    position:relative;
+    left:px;
+    bottom:150px;
+    display:none;
+
 }
 
 .box {
@@ -109,6 +120,172 @@ body {
     height:100px;
 }
 
-.tttHeading {
+.lets {
+    font-size:100px;
+    animation: jump .9s ease-in-out 2;
+}
+
+.play {
+    position: relative;
+    font-size:100px;
+    left:30px;
+    animation: jump .7s ease-in-out 2;
+    display:inline-block;
+}
+
+.mainbox{
+    margin:auto;
+    display:flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+
+@keyframes jump {
+    0%,
+    60% {
+      transform: translate3d(0, 0, 0) scaleY(1);
+    }
+    30% {
+      transform: translate3d(0, -8px, 0) scaleY(1);
+    }
+    75% {
+      transform: translate3d(0, 3px, 0)  scaleY(.5);
+    }
+    100% {
+      transform: scaleY(1) translate3d(0, 0, 0)
+    }
+  }
+
+.othercontainer{
+    position: relative;
+    bottom:100px;
+    display:inline;
+}
+
+.Tic {
+    text-align: center;
+    font-size:60px;
     color:white;
+}
+
+.Tac {
+    text-align: center;
+    font-size:60px;
+}
+
+.Toe {
+    text-align: center;
+    font-size:60px;
+}
+
+.fa-times {
+    color:var(--primary-color);
+    margin-right:20px;
+}
+
+.fa-circle {
+    color:var(--secondary-color);
+    margin-right:20px;
+
+}
+
+.fa-times-circle {
+    color: var(--tertiary-color);
+    margin-right:20px;
+
+}
+
+.inputcontainer {
+   position: relative;
+   bottom: 20px;
+   display: flex;
+   flex-direction: row;
+   justify-content: space-evenly;
+}
+
+.playeronecard {
+   background-color: rgba(255, 255, 255, 0.774);
+   width:220px;
+   height:110px;
+   border-radius: 15px;
+   padding:10px;
+   display:inline-block;
+   z-index:50;
+}
+
+.playertwocard {
+   background-color: rgba(255, 255, 255, 0.774);
+   display:inline-block;
+   width:220px;
+   height:110px;
+   border-radius: 15px;
+   padding:10px;
+   z-index:50;
+}
+ 
+.player {
+   color:black;
+   font-size:20px; 
+}
+
+.player1name {
+    border-radius: 5px;
+    height:30px;
+}
+
+.ready {
+        height:35px;
+        margin-top:2px;
+        border-color: var(--secondary-color);
+        color: black;
+        background-image: -webkit-linear-gradient(45deg #F22816, 50%, transparent 50%);
+        background-image: linear-gradient(45deg, #F22816 50%, transparent 50%);
+        background-position: 100%;
+        background-size: 400%;
+        -webkit-transition: background 300ms ease-in-out;
+        transition: background 300ms ease-in-out;
+        border:2px solid;
+        border-radius: 0.6em;
+      }
+
+.ready:hover {
+        background-position: 0;
+        color:white;
+        transform: scale(.95);
+        cursor:pointer;
+}
+
+.vs {
+    color:var(--tertiary-color);
+    margin:auto;
+    font-size:40px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    display:inline;
+    position:relative;
+    display:none;
+}
+
+.winnerbox {
+    position:absolute;
+    right:500px;
+    font-size: 56px;
+    top:320px;
+    color:black;
+    width:360px;
+    height:260px;
+    z-index:50;
+    display:none;
+    background-color: var(--primary-color);
+    background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
+    border:var(--secondary-color) 2px solid;
+    color:black;
+    text-align: center;
+    
+}
+
+.play{
+    color:black;
 }

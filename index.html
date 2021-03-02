@@ -4,35 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <title>Tic Tac Toe</title>
 </head>
 <body>
 
-    <div class="heading">
-        <h1 class="tttHeading">Tic- </h1>
-        <h1 class="tttHeading">Tac-</h1>
-        <h1 class="tttHeading">Toe </h1>
+    <div class="mainbox">
+        <h1 class="lets">Let's</h1>
+        <h1 class="play">Play</h1>
+        </div>
 
-    </div>
     
     <div class="names">
     <h1 class="namediv1"></h1>
     <h1 class="namediv2"></h1>
     </div>
-
-<div class="sidebar">
-    <div class="player1">
-        <input type="text" placeholder="Player 1 Name" class="player1name">
-        <button class="name1">Ready</button>
-    </div>
-
-    <div class="player2">
-        <input type="text" placeholder="Player 2 Name" class="player2name">
-        <button class="name2">Ready</button>
-    </div>
-
-
-</div>
 
 
 <div class="container">
@@ -45,19 +32,62 @@
     <div class="box" id="boxseven"></div>
     <div class="box" id="boxeight"></div>
     <div class="box" id="boxnine"></div>
-
-</div>
-
-<div class="prompt">
-<h1 class="select">Count</h1>
-<div class="counter"></div>
-
-
 </div>
 
 
+<div class="othercontainer">
+<div data-aos="fade-right"
+data-aos-duration="2000">
 
 
-    <script src="app.js"></script>
+<h2 class="Tic"><i class="fas fa-times"></i>Tic</h2>
+</div>
+
+<div data-aos="fade-left"
+data-aos-duration="2000">
+<h2 class="Tac"><i class="far fa-circle"></i>Tac</h2>
+</div>
+
+<div data-aos="fade-up"
+data-aos-duration="2000">
+<h2 class="Toe"><i class="far fa-times-circle"></i>Toe</h2>
+</div>
+
+</div>
+
+<div class="inputcontainer">
+
+    <div class="playeronecard">
+    <h1 class="player">Player One</h1><hr>
+    <input type="text" placeholder="Player 1 Name" class="player1name">
+    <button class="ready name1" id="btn1">Ready Up!</button>
+    </div>
+    
+    
+    <div class="playertwocard">
+    <h1 class="player">Player Two</h1><hr>
+    <input type="text" placeholder="Player 2 Name" class="player2name">
+    <button class="name2 ready" id="btn2">Ready Up!</button>
+    </div> 
+    
+    
+    </div>
+
+    <div class="vs">VS</div>
+
+<div class="darkoverlay"></div>
+<div class="winnerbox"> Play Again?
+    <button class="yes"><i class="fas fa-redo"></i></button>
+</div>
+
+
+
+
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+ 
+<script>
+    AOS.init();</script> 
+  <script src="app.js"></script> 
 </body>
 </html>
