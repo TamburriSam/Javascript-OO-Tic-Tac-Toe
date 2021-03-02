@@ -1,4 +1,4 @@
-let countbox = document.querySelector(".counter");
+
 
 const Gameboard = (function () {
   let one = document.querySelector("#boxone");
@@ -48,91 +48,90 @@ const Game = (function () {
   var nameSpace1 = document.querySelector('.namediv1');
   var nameSpace2 = document.querySelector('.namediv2');
 
-
-
-  function _showGame(gameboard) {
-    let newGameArray = [];
-    for (let i = 0; i < Gameboard.length; i++) {
-      newGameArray.push(Gameboard[i].textContent);
-    }
-    return newGameArray;
-  }
-
   const _getTurn = function () {
     if (count === 0) {
       Player1 = Player("X");
       count++;
-      countbox.innerHTML = count;
       return Player1;
     } else if (count === 1) {
       Player2 = Player("O");
       count++;
-      countbox.innerHTML = count;
       return Player2;
     } else if (count === 2) {
       Player1 = Player("X");
       count++;
-      countbox.innerHTML = count;
       return Player1;
     } else if (count === 3) {
       Player2 = Player("O");
       count++;
-      countbox.innerHTML = count;
       return Player2;
     } else if (count === 4) {
       Player1 = Player("X");
       count++;
-      countbox.innerHTML = count;
       return Player1;
     } else if (count === 5) {
       Player2 = Player("O");
       count++;
-      countbox.innerHTML = count;
       return Player2;
     } else if (count === 6) {
       Player1 = Player("X");
       count++;
-      countbox.innerHTML = count;
       return Player1;
     } else if (count === 7) {
       Player2 = Player("O");
       count++;
-      countbox.innerHTML = count;
       return Player2;
     } else if (count === 8) {
       Player1 = Player("X");
       count++;
-      countbox.innerHTML = count;
       return Player1;
     }
   };
 
   const showName = function () {
+      var lets = document.querySelector('.lets');
+      var play = document.querySelector('.play');
       var playerName1 = document.querySelector('.player1name');
       var playerName2 = document.querySelector('.player2name');
       var ready1 = document.querySelector('.name1');
       var ready2 = document.querySelector('.name2');
-      var nameSpace1 = document.querySelector('.namediv1');
-      var nameSpace2 = document.querySelector('.namediv2');
+      var player1card = document.querySelector('.playeronecard');
+      var player2card = document.querySelector('.playertwocard');
+      var tictactoe = document.querySelector('.othercontainer');
+      var tttgameboard = document.querySelector('.container');
+      var vs = document.querySelector('.vs')
+
 
 
       ready1.addEventListener('click', function(){
-          nameSpace1.innerHTML = playerName1.value + ' VS';
-          playerName1.style.display ="none";
-          ready1.style.display="none"
+        
+
+          lets.innerHTML = playerName1.value+' '+' ';
+          lets.style.color = '#22A2F2'
+          lets.appendChild(vs)
+          vs.style.display ="inline"
+          play.innerHTML = '';
+          player1card.style.display = "none";
       })
 
       ready2.addEventListener('click', function(){
-        nameSpace2.innerHTML = playerName2.value;
-        playerName2.style.display ="none";
-        ready2.style.display="none"
+        play.innerHTML = playerName2.value;
+        play.style.color = 'orange';
+        player2card.style.display = 'none';
+        tictactoe.style.position = 'relative';
+        tictactoe.style.bottom = '250px';
+        tictactoe.style.display = 'block';
+        tictactoe.style.fontSize = '12px'; 
+        tictactoe.style.position = 'absolute';
+        tttgameboard.style.display ="grid";
+
+
     })
   }
 
   const makeMove = function () {
     for (let i = 0; i < Gameboard.length; i++) {
       Gameboard[i].addEventListener("mousedown", function (e) {
-          winCombo();
         if (Gameboard[i].innerHTML === "") {
            Gameboard[i].innerHTML += _getTurn();
            return winCombo();
@@ -145,79 +144,96 @@ const Game = (function () {
 
   const winCombo = function () {
     let gamePiece = _showGame(Gameboard);
+    let winnerBox = document.querySelector('.winnerbox');
+    var tttgameboard = document.querySelector('.container');
+    var lets = document.querySelector('.lets');
+    var play = document.querySelector('.play');
     let winner = '';
     //top row - 1
     if (Gameboard[0].textContent === 'X' && Gameboard[1].textContent === 'X' && Gameboard[2].textContent === 'X'){
-        alert('x wins')
+        play.innerHTML = 'X WINS'
+        lets.style.display="none";
+        gamePiece[1].innerHTML = 'PLAY AGAIN?'
+        winnerBox.style.display='block'
     }
+
+     if (Gameboard[0].textContent === 'O' && Gameboard[1].textContent === 'O' && Gameboard[2].textContent === 'O'){
+        winnerBox.innerHTML = 'O Wins!'
     }
 
-   /*  if (gamePiece[0] && gamePiece[1] && gamePiece[2] === "O") {
-      return console.log("O WON");
-    };
+    //left side
+    if (Gameboard[0].textContent === 'X' && Gameboard[3].textContent === 'X' && Gameboard[6].textContent === 'X'){
+      winnerBox.innerHTML = 'X Wins!'
+  }
 
-    //left side - 2
-    if (gamePiece[0] && gamePiece[3] && gamePiece[6] === "X") {
-      return console.log("X WON");
-    };
+    if (Gameboard[0].textContent === 'O' && Gameboard[3].textContent === 'O' && Gameboard[6].textContent === 'O'){
+    winnerBox.innerHTML = 'O Wins!'
+  }
 
-    if (gamePiece[0] && gamePiece[3] && gamePiece[6] === "O") {
-      return console.log("O WON");
-    };
+  //right side
+  if (Gameboard[2].textContent === 'X' && Gameboard[5].textContent === 'X' && Gameboard[8].textContent === 'X'){
+    winnerBox.innerHTML = 'X Wins!'
+}
 
-    //bottom row - 3
-    if (gamePiece[6] && gamePiece[7] && gamePiece[8] === "X") {
-      return console.log("X WON");
-    } else if (gamePiece[6] && gamePiece[7] && gamePiece[8] === "O") {
-      return console.log("O WON");
-    };
+if (Gameboard[2].textContent === 'O' && Gameboard[5].textContent === 'O' && Gameboard[8].textContent === 'O'){
+  winnerBox.innerHTML = 'O Wins!'
+}
 
-    //right side - 4
-    if (gamePiece[2] && gamePiece[5] && gamePiece[8] === "X") {
-      return console.log("X WON");
-    } else if (gamePiece[2] && gamePiece[5] && gamePiece[8] === "O") {
-      return console.log("O WON");
-    };
+//bottom
+if (Gameboard[6].textContent === 'X' && Gameboard[7].textContent === 'X' && Gameboard[8].textContent === 'X'){
+  winnerBox.innerHTML = 'X Wins!'
+}
 
-    //diagonal left top corner - 5
-    if (gamePiece[0] && gamePiece[4] && gamePiece[8] === "X") {
-      return console.log("X WON");
-    } else if (gamePiece[0] && gamePiece[4] && gamePiece[8] === "O") {
-      console.log("O WON");
-    };
+if (Gameboard[6].textContent === 'O' && Gameboard[7].textContent === 'O' && Gameboard[8].textContent === 'O'){
+  winnerBox.innerHTML = 'O Wins!'
+}
 
-    //diagonal right top corner - 6
-    if (gamePiece[2] && gamePiece[4] && gamePiece[6] === "X") {
-      return console.log("X WON");
-    } else if (gamePiece[2] && gamePiece[4] && gamePiece[6] === "O") {
-      return console.log("O WON");
-    };
+//horizontal middle
+if (Gameboard[3].textContent === 'X' && Gameboard[4].textContent === 'X' && Gameboard[5].textContent === 'X'){
+  winnerBox.innerHTML = 'X Wins!'
+}
 
-    //down the middle horizontal - 7
-    if (gamePiece[3] && gamePiece[4] && gamePiece[5] === "X") {
-      return console.log("X WON");
-    } else if (gamePiece[3] && gamePiece[4] && gamePiece[5] === "O") {
-      return console.log("O WON");
-    };
+if (Gameboard[3].textContent === 'O' && Gameboard[4].textContent === 'O' && Gameboard[5].textContent === 'O'){
+  winnerBox.innerHTML = 'O Wins!'
+}
 
-    //down the middle vertical - 8
-    if (gamePiece[1] && gamePiece[4] && gamePiece[7] === "X") {
-      return console.log("X WON");
-    } else if (gamePiece[1] && gamePiece[4] && gamePiece[7] === "O") {
-      return console.log("O WON");
-    }; */
+//vertical middle
+if (Gameboard[1].textContent === 'X' && Gameboard[4].textContent === 'X' && Gameboard[7].textContent === 'X'){
+  winnerBox.innerHTML = 'X Wins!'
+}
+if (Gameboard[1].textContent === 'O' && Gameboard[4].textContent === 'O' && Gameboard[7].textContent === 'O'){
+  winnerBox.innerHTML = 'O Wins!'
+}
+
+//diagonal top left 
+if (Gameboard[2].textContent === 'X' && Gameboard[4].textContent === 'X' && Gameboard[6].textContent === 'X'){
+  winnerBox.innerHTML = 'X Wins!'
+}
+
+if (Gameboard[2].textContent === 'O' && Gameboard[4].textContent === 'O' && Gameboard[6].textContent === 'O'){
+  winnerBox.innerHTML = 'O Wins!'
+}
+
+//diagonal top right
+if (Gameboard[0].textContent === 'X' && Gameboard[4].textContent === 'X' && Gameboard[8].textContent === 'X'){
+  winnerBox.innerHTML = 'X Wins!'
+}
+
+if (Gameboard[0].textContent === 'O' && Gameboard[4].textContent === 'O' && Gameboard[8].textContent === 'O'){
+  winnerBox.innerHTML = 'O Wins!'
+}
+    
+
+}
     /*maybe return the persons player token lit up or something but something to return or modal */
     //look into returning true or false
+    //god u gotta look at returns in general youre not v good w that yet 
     // look into what index parameter does in chain method 
-    //private public properties _function
     //@param 
-    //make function that holds make move tied into wonGame
   /*   return false
   }; */
 
-  const showWinner = function () {
 
-  }
 
 
   const fullGame = function () {
