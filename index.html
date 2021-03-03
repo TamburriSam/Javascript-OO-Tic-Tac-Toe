@@ -58,14 +58,14 @@ data-aos-duration="2000">
 <div class="inputcontainer">
 
     <div class="playeronecard">
-    <h1 class="player">Player One</h1><hr>
+        <i class="fas fa-user-ninja"></i><h1 class="player">Player One</h1><hr>
     <input type="text" placeholder="Player 1 Name" class="player1name">
     <button class="ready name1" id="btn1">Ready Up!</button>
     </div>
     
     
     <div class="playertwocard">
-    <h1 class="player">Player Two</h1><hr>
+    <i class="fas fa-user-secret"></i><h1 class="player">Player Two</h1><hr>
     <input type="text" placeholder="Player 2 Name" class="player2name">
     <button class="name2 ready" id="btn2">Ready Up!</button>
     </div> 
@@ -87,7 +87,17 @@ data-aos-duration="2000">
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
  
 <script>
-    AOS.init();</script> 
+    AOS.init();
+    
+    let playAgain = document.querySelector('.yes')
+
+    playAgain.addEventListener('click', function(){
+        location.reload()
+    })
+    
+    
+    
+    </script> 
   <script src="app.js"></script> 
 </body>
 </html>

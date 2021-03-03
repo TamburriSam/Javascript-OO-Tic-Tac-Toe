@@ -14,13 +14,15 @@
 }
 
 body {
-    background-image: linear-gradient(to bottom, #405166 0%,#656f6f 100%);
-    background-size: cover;
+/*     background-image: linear-gradient(to bottom, #405166 0%,#656f6f 100%);
+ */    background-size: cover;
+ background-color: black;
     background-repeat: no-repeat;
     height:100vh;
     font-family: var(--main-font);
     color: white;
     overflow: hidden;
+    padding:15px;
 }
 
 
@@ -46,7 +48,7 @@ body {
     border:solid 1px var(--secondary-color);
     width:162px;
     height:162px;
-    background-color: var(--primary-color);
+    background-color:#1FF072;
     border-radius: 5px;
     font-size:50px;
     text-align: center;
@@ -61,7 +63,6 @@ body {
 
 #boxone {
     grid-area: one;
-    background-color: var(--primary-color);
     transition: 0.2s all;
 }
 
@@ -161,17 +162,19 @@ body {
     position: relative;
     bottom:100px;
     display:inline;
+    margin:auto;
 }
 
 .Tic {
     text-align: center;
     font-size:60px;
-    color:white;
+    color:#11D9B1
 }
 
 .Tac {
     text-align: center;
     font-size:60px;
+    color: #14F8F0;
 }
 
 .Toe {
@@ -181,12 +184,12 @@ body {
 
 .fa-times {
     color:var(--primary-color);
-    margin-right:20px;
+    margin-right:40px;
 }
 
 .fa-circle {
     color:var(--secondary-color);
-    margin-right:20px;
+    margin-right:25px;
 
 }
 
@@ -227,6 +230,7 @@ body {
 .player {
    color:black;
    font-size:20px; 
+   display:inline;
 }
 
 .player1name {
@@ -269,10 +273,11 @@ body {
 }
 
 .winnerbox {
-    position:absolute;
-    right:500px;
+    margin:auto;
+    position: fixed; 
+    margin-left:430px; 
     font-size: 56px;
-    top:320px;
+    top:320px; 
     color:black;
     width:360px;
     height:260px;
@@ -287,5 +292,19 @@ body {
 }
 
 .play{
+    color:white;
+}
+
+.fa-user-secret {
     color:black;
+    position:relative;
+    font-size:24px;
+    display:inline;
+}
+
+.fa-user-ninja {
+    color:black;
+    position:relative;
+    font-size:24px;
+    display:inline;
 }
