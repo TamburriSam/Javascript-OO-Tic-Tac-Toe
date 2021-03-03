@@ -1,22 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=DotGothic16&family=RocknRoll+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 
 
 :root {
     /* Colors */
     --dark-color: #010626;
-    --primary-color: #22A2F2;
+    --primary-color: #1FF072;
     --secondary-color: #D98236;
     --tertiary-color: #F22816;
     --quaternary-color: #8C1818;
     /* Fonts */
-    --main-font: 'RocknRoll One', sans-serif;
+    --main-font:'DotGothic16', sans-serif;
 }
 
 body {
 /*     background-image: linear-gradient(to bottom, #405166 0%,#656f6f 100%);
  */    background-size: cover;
- background-color: black;
+    background-color: black;
     background-repeat: no-repeat;
     height:100vh;
     font-family: var(--main-font);
@@ -38,9 +38,9 @@ body {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
     position:relative;
-    left:px;
     bottom:150px;
     display:none;
+    z-index:20;
 
 }
 
@@ -50,8 +50,9 @@ body {
     height:162px;
     background-color:#1FF072;
     border-radius: 5px;
-    font-size:50px;
+    font-size:60px;
     text-align: center;
+    padding-top: 30px;
 }
 .box:hover {
     background-color: #22a2f2bd;
@@ -127,7 +128,7 @@ body {
 }
 
 .play {
-    position: relative;
+    /* position: relative; */
     font-size:100px;
     left:30px;
     animation: jump .7s ease-in-out 2;
@@ -136,9 +137,10 @@ body {
 
 .mainbox{
     margin:auto;
+    width:900px;
     display:flex;
     justify-content: center;
-    margin-bottom: 20px;
+    
 }
 
 
@@ -160,9 +162,11 @@ body {
 
 .othercontainer{
     position: relative;
-    bottom:100px;
-    display:inline;
     margin:auto;
+    width:400px;
+    bottom:40px;
+    display:block;
+    z-index:4;
 }
 
 .Tic {
@@ -174,22 +178,23 @@ body {
 .Tac {
     text-align: center;
     font-size:60px;
-    color: #14F8F0;
+    color: #14c3f8;
 }
 
 .Toe {
     text-align: center;
     font-size:60px;
+    color:#069bff;
 }
 
 .fa-times {
     color:var(--primary-color);
-    margin-right:40px;
+    margin-right:27px;
 }
 
 .fa-circle {
     color:var(--secondary-color);
-    margin-right:25px;
+    margin-right:22px;
 
 }
 
@@ -200,11 +205,13 @@ body {
 }
 
 .inputcontainer {
-   position: relative;
-   bottom: 20px;
+  width:400px;
+  position:relative;
+  top:70px;
    display: flex;
    flex-direction: row;
-   justify-content: space-evenly;
+   margin:auto;
+    
 }
 
 .playeronecard {
@@ -215,6 +222,7 @@ body {
    padding:10px;
    display:inline-block;
    z-index:50;
+   margin-right:100px;
 }
 
 .playertwocard {
@@ -233,9 +241,10 @@ body {
    display:inline;
 }
 
-.player1name {
+input[type=text] {
     border-radius: 5px;
     height:30px;
+    font-family: var(--main-font);
 }
 
 .ready {
@@ -249,6 +258,7 @@ body {
         background-size: 400%;
         -webkit-transition: background 300ms ease-in-out;
         transition: background 300ms ease-in-out;
+        font-family: var(--main-font);
         border:2px solid;
         border-radius: 0.6em;
       }
@@ -262,28 +272,30 @@ body {
 
 .vs {
     color:var(--tertiary-color);
-    margin:auto;
     font-size:40px;
-    text-align: center;
-    display: flex;
-    justify-content: center;
+    width:100px;
     display:inline;
-    position:relative;
+    position: fixed;
     display:none;
+    margin:auto;
+    transform: rotate(0.05turn);
+   
 }
 
 .winnerbox {
     margin:auto;
-    position: fixed; 
-    margin-left:430px; 
+    position: absolute; 
+    left:0;
+    right:0;
+    bottom:0;
+    top:0;
     font-size: 56px;
-    top:320px; 
     color:black;
     width:360px;
     height:260px;
     z-index:50;
     display:none;
-    background-color: var(--primary-color);
+    background-color: #17b155;
     background-image: url("https://www.transparenttextures.com/patterns/back-pattern.png");
     border:var(--secondary-color) 2px solid;
     color:black;
@@ -291,15 +303,13 @@ body {
     
 }
 
-.play{
-    color:white;
-}
 
 .fa-user-secret {
     color:black;
     position:relative;
     font-size:24px;
     display:inline;
+    margin-right:10px;
 }
 
 .fa-user-ninja {
@@ -307,4 +317,17 @@ body {
     position:relative;
     font-size:24px;
     display:inline;
+    margin-right:10px;
+}
+
+.yes {
+    width:100px;
+    background:transparent;
+    font-size:100px;
+    color:white;
+    cursor:pointer;
+    position:relative;
+    top:20px;
+    height:100px;
+    border:none;
 }
