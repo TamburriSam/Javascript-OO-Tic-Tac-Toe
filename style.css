@@ -404,14 +404,13 @@ input[type=text] {
         margin:auto;
         width:99%;
         height:60%;
-        top:30px;
+        top:90px;
     }
 
     .inputcontainer {
-        flex-direction: column;
-        width:40%;
+        width:60%;
         margin:auto;
-        top:420px;
+        top:350px;
         position: relative;
         left:0px;
     }
