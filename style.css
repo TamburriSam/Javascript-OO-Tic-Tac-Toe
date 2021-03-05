@@ -408,9 +408,10 @@ input[type=text] {
     }
 
     .inputcontainer {
+        flex-direction: column;
         width:99%;
         margin:auto;
-        top:320px;
+        top:420px;
         position: relative;
         left:0px;
     }
