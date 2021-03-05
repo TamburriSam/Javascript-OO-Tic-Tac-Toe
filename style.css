@@ -424,7 +424,7 @@ input[type=text] {
     }
 } 
 
-@media only screen 
+/* @media only screen 
     and (device-width : 375px) 
     and (device-height : 812px) 
     and (-webkit-device-pixel-ratio : 3) { 
@@ -442,5 +442,5 @@ input[type=text] {
         left:0px;
         }
 
-    }
+    } */
 
