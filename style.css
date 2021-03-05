@@ -392,7 +392,7 @@ input[type=text] {
 
 }
 
-@media only screen and (max-width:768px){
+/* @media only screen and (max-width:768px){
     .mainbox {
         position:absolute;
         margin:auto;
@@ -421,7 +421,7 @@ input[type=text] {
     .play{
         left:0;
     }
-}
+} */
 
 @media only screen 
     and (device-width : 375px) 
@@ -429,7 +429,7 @@ input[type=text] {
     and (-webkit-device-pixel-ratio : 3) { 
         
         .lets {
-            font-size:10px;
+            font-size:1px;
         }
 
         .inputcontainer {
