@@ -385,7 +385,6 @@ input[type=text] {
         flex-direction: column;
         width:40%;
         margin:auto;
-        top:420px;
         position: relative;
         left:0px;
     }
