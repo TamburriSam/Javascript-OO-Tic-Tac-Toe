@@ -400,19 +400,19 @@ input[type=text] {
     }
 
     #ttt {
-        display:flex;
         position:absolute;
         margin:auto;
         width:99%;
         height:60%;
-        bottom:100px;
+        top:30px;
     }
 
     .inputcontainer {
-        width:70%;
+        width:99%;
         margin:auto;
-        top:220px;
+        top:520px;
         position: relative;
+        left:20px;
     }
 
     .lets {
@@ -422,4 +422,22 @@ input[type=text] {
         left:0;
     }
 }
+
+@media only screen 
+    and (device-width : 375px) 
+    and (device-height : 812px) 
+    and (-webkit-device-pixel-ratio : 3) { 
+        
+        .lets {
+            font-size:10px;
+        }
+
+        .inputcontainer {
+            flex-direction: column;
+            margin:auto;
+            width:80%;
+            top:300px;
+        }
+
+    }
 
