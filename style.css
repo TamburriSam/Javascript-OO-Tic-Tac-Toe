@@ -382,12 +382,12 @@ input[type=text] {
     }
 
     .inputcontainer {
-        display: flex;
+        flex-direction: column;
+        width:40%;
         margin:auto;
-        width:99%;
-        right:60px;
-        position: absolute;
-        bottom:200px;
+        top:420px;
+        position: relative;
+        left:0px;
     }
 
 }
