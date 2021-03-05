@@ -154,7 +154,7 @@ const Game = (function () {
     let winnerBox = document.querySelector(".winnerbox");
 
     lets.innerHTML=''
-    winnerBox.style.display = "block";
+    winnerBox.style.display = "flex";
     play.innerHTML = `${won[won.length-1]} wins!`
     console.log(won)
 
