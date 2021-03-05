@@ -415,7 +415,11 @@ input[type=text] {
         top:500px;
         
         margin:auto;
-        width:99%
+        width:99%;
+    }
+
+    .playeronecard {
+        margin-right:0px;
     }
 
    
