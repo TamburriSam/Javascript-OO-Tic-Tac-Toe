@@ -172,7 +172,7 @@ body {
 .Tic {
     text-align: center;
     font-size:60px;
-    color:#11D9B1
+    color:#11D9B1;
 }
 
 .Tac {
@@ -211,6 +211,7 @@ body {
    display: flex;
    flex-direction: row;
    margin:auto;
+   z-index:50;
     
 }
 
@@ -331,3 +332,94 @@ input[type=text] {
     height:100px;
     border:none;
 }
+
+.popup {
+    background-color: #fff;
+    color:red;
+    width:100px;
+    padding:5px;
+    border-radius: 10px;
+    display:none;
+}
+
+
+/* Media Queries */
+
+@media only screen and (max-width:600px){
+    .box {
+        width:100px;
+        height:100px;
+    }
+
+    .mainbox {
+        position:absolute;
+        left:0%;
+        width:100px;
+    }
+
+    .mainbox > h1 {
+        font-size: 70px;
+        margin:auto;
+    }
+
+    .container {
+        width:60%;
+        top:100px;
+        height:100px;
+        position: relative;
+        margin:auto;
+        
+ 
+    }
+
+    #ttt {
+        display:flex;
+        position: relative;;
+        width:90%;
+        margin-left: auto;
+        margin-right: auto;
+        top:900px;
+    }
+
+    .inputcontainer {
+        display: flex;
+        margin:auto;
+        width:99%;
+        right:60px;
+        position: absolute;
+        bottom:200px;
+    }
+
+}
+
+@media only screen and (max-width:768px){
+    .mainbox {
+        position:absolute;
+        margin:auto;
+        width:99%;
+    }
+
+    #ttt {
+        display:flex;
+        position:absolute;
+        margin:auto;
+        width:99%;
+        height:60%;
+        bottom:100px;
+    }
+
+    .inputcontainer {
+        width:70%;
+        margin:auto;
+        top:220px;
+        position: relative;
+    }
+
+    .lets {
+        
+    }
+    .play{
+        left:0;
+    }
+}
+
