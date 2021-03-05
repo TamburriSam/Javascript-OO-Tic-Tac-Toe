@@ -2,10 +2,12 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" type="image/jpg" href="—Pngtree—3d latters x_5883749.png"/>
+
     <title>Tic Tac Toe</title>
 </head>
 <body>
@@ -21,21 +23,20 @@
     <h1 class="namediv2"></h1>
     </div>
 
+    <div class="container">
+        <div class="box" id="boxone"></div>
+        <div class="box" id="boxtwo"></div>
+        <div class="box" id="boxthree"></div>
+        <div class="box" id="boxfour"></div>
+        <div class="box" id="boxfive"></div>
+        <div class="box" id="boxsix"></div>
+        <div class="box" id="boxseven"></div>
+        <div class="box" id="boxeight"></div>
+        <div class="box" id="boxnine"></div>
+    </div>
 
-<div class="container">
-    <div class="box" id="boxone"></div>
-    <div class="box" id="boxtwo"></div>
-    <div class="box" id="boxthree"></div>
-    <div class="box" id="boxfour"></div>
-    <div class="box" id="boxfive"></div>
-    <div class="box" id="boxsix"></div>
-    <div class="box" id="boxseven"></div>
-    <div class="box" id="boxeight"></div>
-    <div class="box" id="boxnine"></div>
-</div>
 
-
-<div class="othercontainer">
+<div class="othercontainer" id="ttt">
 <div data-aos="fade-right"
 data-aos-duration="2000">
 
@@ -66,8 +67,9 @@ data-aos-duration="2000">
     
     <div class="playertwocard">
     <i class="fas fa-user-secret"></i><h1 class="player">Player Two</h1><hr>
-    <input type="text" placeholder="Player 2 Name" class="player2name">
-    <button class="name2 ready" id="btn2">Ready Up!</button>
+    <input type="text" placeholder="Player 2 Name" class="player2name" id="myText">
+    
+    <button type="button" disabled class="name2 ready" id="btn2">Ready Up!</button>
     </div> 
     
     
@@ -81,6 +83,8 @@ data-aos-duration="2000">
 </div>
 
 
+<div class="popup"><i class="fas fa-exclamation-triangle"></i> Please Enter A Name</div>
+
 
 
 
@@ -88,14 +92,6 @@ data-aos-duration="2000">
  
 <script>
     AOS.init();
-   /*  
-    let playAgain = document.querySelector('.yes')
-
-    playAgain.addEventListener('click', function(){
-        location.reload()
-    }) */
-    
-    
     
     </script> 
   <script src="app.js"></script> 
