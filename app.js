@@ -1,4 +1,4 @@
-const Gameboard = (function () {
+const GameBoard = (function () {
   let one = document.querySelector("#boxone");
   let two = document.querySelector("#boxtwo");
   let three = document.querySelector("#boxthree");
@@ -13,10 +13,10 @@ const Gameboard = (function () {
   return gameArray;
 })();
 
-function _showGame(gameboard) {
+function _showGame(GameBoard) {
   let newGameArray = [];
-  for (let i = 0; i < Gameboard.length; i++) {
-    newGameArray.push(Gameboard[i].textContent);
+  for (let i = 0; i < GameBoard.length; i++) {
+    newGameArray.push(GameBoard[i].textContent);
   }
   return newGameArray;
 }
@@ -34,6 +34,7 @@ const Game = (function () {
   let count = 0;
   var playerName1 = document.querySelector(".player1name");
   var playerName2 = document.querySelector(".player2name");
+  let won = [];
 
   const _getTurn = function () {
     if (count % 2 === 0) {
@@ -47,7 +48,6 @@ const Game = (function () {
     }
   };
 
-
   const showName = function () {
     var lets = document.querySelector(".lets");
     var play = document.querySelector(".play");
@@ -55,36 +55,79 @@ const Game = (function () {
     var ready2 = document.querySelector(".name2");
     var player1card = document.querySelector(".playeronecard");
     var player2card = document.querySelector(".playertwocard");
-    var tictactoe = document.querySelector(".othercontainer");
-    var tttgameboard = document.querySelector(".container");
+    var TicTacToe = document.querySelector(".othercontainer");
+    var tttGameBoard = document.querySelector(".container");
     var vs = document.querySelector(".vs");
+    let popUp = document.querySelector('.popup')
+
+
+ 
 
     ready1.addEventListener("click", function () {
+   
+    
+      if(playerName1.value !== ''){
       lets.innerHTML = playerName1.value+' ';
       lets.style.color = "#22A2F2";
       lets.appendChild(vs);
       vs.style.display = "inline";
       play.innerHTML = "";
       player1card.style.display = "none";
+      ready2.disabled = false
+      }else {
+
+          popUp.style.display="block"
+          player1card.appendChild(popUp)
+
+         
+         setTimeout(function(){
+           popUp.style.display="none"
+         }, 2000)
+      
+
+        player1card.style.display="block";
+        lets.style.display = "block";
+        lets.innerHTML = `Lets`+`&nbsp`
+        play.style.display="block";
+        play.innerHTML="Play"
+      }
     });
 
+    
+
     ready2.addEventListener("click", function () {
+
+      if(playerName2.value !== ''){
       play.innerHTML = '&nbsp' + playerName2.value;
       play.style.color = "orange";
       player2card.style.display = "none";
-      tictactoe.style.position = "relative";
-      tictactoe.style.bottom = "230px";
-      tictactoe.style.display = "block";
-      tictactoe.style.fontSize = "12px";
-      tictactoe.style.position = "absolute";
-      tttgameboard.style.display = "grid";
+      //make into class and add
+      TicTacToe.style.position = "relative";
+      TicTacToe.style.bottom = "230px";
+      TicTacToe.style.display = "block";
+      TicTacToe.style.fontSize = "12px";
+      TicTacToe.style.position = "absolute";
+      tttGameBoard.style.display = "grid";
+      }else{
+        popUp.style.display="block"
+          player2card.appendChild(popUp)
+
+         
+         setTimeout(function(){
+           popUp.style.display="none"
+         }, 2000)
+      }
+
+
+
+
     });
   };
 
   const _draw = function () {
     var lets = document.querySelector(".lets");
     var play = document.querySelector(".play");
-    let gamePiece = _showGame(Gameboard);
+    let gamePiece = _showGame(GameBoard);
     let gameSpace = gamePiece.filter((game) => game === "");
     if (gameSpace.length === 0) {
       lets.innerHTML = "Tied";
@@ -94,10 +137,10 @@ const Game = (function () {
   };
 
   const makeMove = function () {
-    for (let i = 0; i < Gameboard.length; i++) {
-      Gameboard[i].addEventListener("mousedown", function (e) {
-        if (Gameboard[i].innerHTML === "") {
-          Gameboard[i].innerHTML += _getTurn();
+    for (let i = 0; i < GameBoard.length; i++) {
+      GameBoard[i].addEventListener("mousedown", function () {
+        if (GameBoard[i].innerHTML === "") {
+          GameBoard[i].innerHTML += _getTurn();
           _draw();
           return winCombo();
         }
@@ -109,18 +152,11 @@ const Game = (function () {
     var lets = document.querySelector(".lets");
     var play = document.querySelector(".play");
     let winnerBox = document.querySelector(".winnerbox");
-    let winner = document.querySelector(".box");
-    let playAgain = document.querySelector('.yes')
 
     lets.innerHTML=''
     winnerBox.style.display = "block";
-
-    if(winner.textContent != 'X'){
-      play.innerHTML = 'O wins'
-    }else {
-      play.innerHTML = 'X wins'
-    }
-
+    play.innerHTML = `${won[won.length-1]} wins!`
+    console.log(won)
 
     return _refreshGame(); 
   };
@@ -133,49 +169,45 @@ const Game = (function () {
 
     playAgain.addEventListener('click',function(){
       winnerBox.style.display="none"
-      for(i = 0 ; i < _showGame(Gameboard).length; i++){
-        Gameboard[i].innerHTML = '';
-        lets.innerHTML = playerName1.value + ' vs ';
+      for(i = 0 ; i < _showGame(GameBoard).length; i++){
+        GameBoard[i].innerHTML = '';
+        lets.innerHTML = playerName1.value + '&nbspvs&nbsp ';
         play.innerHTML = ' ' + playerName2.value;
       }
     })
   }
 
- 
-  /*maybe return the persons player token lit up or something but something to return or modal */
-  //look into returning true or false
-  //god u gotta look at returns in general youre not v good w that yet
-  // look into what index parameter does in chain method
-  //@param
-  /*   return false
-  }; */
 
    const winCombo = function () {
-    let gamepiece = _showGame(Gameboard)
+    let gamePiece = _showGame(GameBoard)
 
 
-    if(gamepiece[0] === 'X' && gamepiece[1] === 'X' && gamepiece[2] === 'X'
-      || gamepiece[3] === 'X' && gamepiece[4] === 'X' && gamepiece[5] === 'X'
-      || gamepiece[6] === 'X' && gamepiece[7] === 'X' && gamepiece[8] === 'X'
-      || gamepiece[0] === 'X' && gamepiece[3] === 'X' && gamepiece[6] === 'X'
-      || gamepiece[1] === 'X' && gamepiece[4] === 'X' && gamepiece[7] === 'X'
-      || gamepiece[2] === 'X' && gamepiece[5] === 'X' && gamepiece[8] === 'X'
-      || gamepiece[0] === 'X' && gamepiece[4] === 'X' && gamepiece[8] === 'X'
-      || gamepiece[2] === 'X' && gamepiece[4] === 'X' && gamepiece[6] === 'X'){
+    if(gamePiece[0] === 'X' && gamePiece[1] === 'X' && gamePiece[2] === 'X'
+      || gamePiece[3] === 'X' && gamePiece[4] === 'X' && gamePiece[5] === 'X'
+      || gamePiece[6] === 'X' && gamePiece[7] === 'X' && gamePiece[8] === 'X'
+      || gamePiece[0] === 'X' && gamePiece[3] === 'X' && gamePiece[6] === 'X'
+      || gamePiece[1] === 'X' && gamePiece[4] === 'X' && gamePiece[7] === 'X'
+      || gamePiece[2] === 'X' && gamePiece[5] === 'X' && gamePiece[8] === 'X'
+      || gamePiece[0] === 'X' && gamePiece[4] === 'X' && gamePiece[8] === 'X'
+      || gamePiece[2] === 'X' && gamePiece[4] === 'X' && gamePiece[6] === 'X'){
+        won.push('X')
         _renderWinner()
+        
       return true
       }
 
-      if(gamepiece[0] === 'O' && gamepiece[1] === 'O' && gamepiece[2] === 'O'
-      || gamepiece[3] === 'O' && gamepiece[4] === 'O' && gamepiece[5] === 'O'
-      || gamepiece[6] === 'O' && gamepiece[7] === 'O' && gamepiece[8] === 'O'
-      || gamepiece[0] === 'O' && gamepiece[3] === 'O' && gamepiece[6] === 'O'
-      || gamepiece[1] === 'O' && gamepiece[4] === 'O' && gamepiece[7] === 'O'
-      || gamepiece[2] === 'O' && gamepiece[5] === 'O' && gamepiece[8] === 'O'
-      || gamepiece[0] === 'O' && gamepiece[4] === 'O' && gamepiece[8] === 'O'
-      || gamepiece[2] === 'O' && gamepiece[4] === 'O' && gamepiece[6] === 'O'){
+      if(gamePiece[0] === 'O' && gamePiece[1] === 'O' && gamePiece[2] === 'O'
+      || gamePiece[3] === 'O' && gamePiece[4] === 'O' && gamePiece[5] === 'O'
+      || gamePiece[6] === 'O' && gamePiece[7] === 'O' && gamePiece[8] === 'O'
+      || gamePiece[0] === 'O' && gamePiece[3] === 'O' && gamePiece[6] === 'O'
+      || gamePiece[1] === 'O' && gamePiece[4] === 'O' && gamePiece[7] === 'O'
+      || gamePiece[2] === 'O' && gamePiece[5] === 'O' && gamePiece[8] === 'O'
+      || gamePiece[0] === 'O' && gamePiece[4] === 'O' && gamePiece[8] === 'O'
+      || gamePiece[2] === 'O' && gamePiece[4] === 'O' && gamePiece[6] === 'O'){
+        won.push('O')
         _renderWinner()
-      return true
+       
+        return true
       }else{
       return false}
 };  
