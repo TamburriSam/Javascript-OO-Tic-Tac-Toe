@@ -345,7 +345,7 @@ input[type=text] {
 
 /* Media Queries */
 
-@media only screen and (max-width:600px){
+@media screen and (max-width:600px){
     .box {
         width:100px;
         height:100px;
