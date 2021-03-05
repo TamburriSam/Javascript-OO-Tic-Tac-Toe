@@ -244,6 +244,7 @@ body {
 
 input[type=text] {
     border-radius: 5px;
+    width:200px;
     height:30px;
     font-family: var(--main-font);
 }
@@ -406,7 +407,7 @@ input[type=text] {
         margin:auto;
         width:99%;
         height:60%;
-        top:90px;
+        top:360px;
     }
 
     .inputcontainer {
@@ -416,7 +417,7 @@ input[type=text] {
         position: relative;
         left:0px; */
         position: absolute;
-        top:500px;
+        top:200px;
         
         margin:auto;
         width:99%;
