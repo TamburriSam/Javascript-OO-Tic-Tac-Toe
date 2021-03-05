@@ -416,31 +416,7 @@ input[type=text] {
         left:0px;
     }
 
-    .lets {
-        
-    }
-    .play{
-        left:0;
-    }
+   
 } 
 
-/* @media only screen 
-    and (device-width : 375px) 
-    and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-        
-        .lets {
-            font-size:1px;
-        }
-
-        .inputcontainer {
-            flex-direction: column;
-        width:40%;
-        margin:auto;
-        top:420px;
-        position: relative;
-        left:0px;
-        }
-
-    } */
 
