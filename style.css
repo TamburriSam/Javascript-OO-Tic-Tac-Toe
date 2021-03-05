@@ -161,9 +161,9 @@ body {
   }
 
 .othercontainer{
-    position: relative;
+    position: absolute;
     margin:auto;
-    width:400px;
+    width:20%;
     bottom:40px;
     display:block;
     z-index:4;
@@ -442,3 +442,12 @@ input[type=text] {
         }
 
     }
+
+@media screen and (min-height:861px){
+    .othercontainer {
+    position: absolute;
+    top:300px
+}
+
+
+}
