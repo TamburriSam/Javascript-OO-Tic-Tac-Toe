@@ -173,6 +173,7 @@ body {
     text-align: center;
     font-size:60px;
     color:#11D9B1;
+    height:100px;
 }
 
 .Tac {
@@ -205,11 +206,10 @@ body {
 }
 
 .inputcontainer {
-  width:400px;
-  position:relative;
-  top:70px;
-   display: flex;
-   flex-direction: row;
+  width:99%;
+  position: absolute;
+    display: flex;
+    justify-content: center;
    margin:auto;
    z-index:50;
     
@@ -381,11 +381,11 @@ input[type=text] {
     }
 
     .inputcontainer {
-        flex-direction: column;
-        width:40%;
+        width:99%;
         margin:auto;
-        position: relative;
+        position: absolute;
         left:0px;
+        top:400px;
     }
 
 }
@@ -406,11 +406,16 @@ input[type=text] {
     }
 
     .inputcontainer {
-        width:60%;
+        /* width:60%;
         margin:auto;
-        top:350px;
+        top:390px;
         position: relative;
-        left:0px;
+        left:0px; */
+        position: absolute;
+        top:500px;
+        
+        margin:auto;
+        width:99%
     }
 
    
