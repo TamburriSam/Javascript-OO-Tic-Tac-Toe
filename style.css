@@ -365,6 +365,7 @@ input[type=text] {
         grid-template-columns: repeat(3, 124px);
         grid-template-rows: repeat( 3, 200px);
         padding:0px;
+        justify-content: center;
     }
     .box {
         width:100px;
@@ -372,9 +373,8 @@ input[type=text] {
     }
 
     .mainbox {
-        position:absolute;
-        left:0%;
-        width:100px;
+       top:0px;
+       position:absolute;
     }
 
     .mainbox > h1 {
@@ -386,24 +386,23 @@ input[type=text] {
         grid-row:1/ span 2;
         grid-column: 1/ span 2;
         height:100px;
-        position: relative;
         margin:auto;
     }
 
     .othercontainer {
         grid-row:3;
-        margin-top:80px;
+        width:99%;
     }
 
     .fa-times::before {
         display:none;
     }
 
-    .fa-circle {
+    .fa-circle::before {
         display:none;
     }
 
-    .fa-times-circle{
+    .fa-times-circle::before{
         display:none;
     }
 
@@ -429,40 +428,7 @@ input[type=text] {
 
 } 
 
- @media screen and (max-width:768px){
-    .mainbox {
-        position:absolute;
-        margin:auto;
-        width:99%;
-    }
 
-    #ttt {
-        position:absolute;
-        margin:auto;
-        width:99%;
-        height:60%;
-        top:360px;
-    }
-
-    .inputcontainer {
-        /* width:60%;
-        margin:auto;
-        top:390px;
-        position: relative;
-        left:0px; */
-        position: absolute;
-        top:200px;
-        
-        margin:auto;
-        width:99%;
-    }
-
-    .playeronecard {
-        margin-right:0px;
-    }
-
-   
-}  
 
 
     /* big screens */
