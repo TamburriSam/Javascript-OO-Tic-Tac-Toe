@@ -379,7 +379,7 @@ input[type=text] {
     .mainbox {
        top:0px;
        position:absolute;
-       width:530px;
+       width:400px;
        grid-column: 1/ span 2;
 
     }
@@ -392,7 +392,7 @@ input[type=text] {
     }
 
     .container {
-        width:60%;
+        width:70%;
         grid-row:1/ span 2;
         grid-column: 1/ span 2;
         height:100px;
@@ -417,24 +417,25 @@ input[type=text] {
 
     #ttt {
         grid-column:2;
+        left:-15px;
         display:flex;
         position: absolute;
         margin-left: auto;
         margin-right: auto;
-        bottom:200px;
+        bottom:110px;
         justify-content: center;
     }
 
     .inputcontainer {
-        width:500px;
+        width:420px;
         margin:auto;
         position: absolute;
         left:0px;
-        top:300px;
+        top:200px;
     }
 
     .playeronecard {
-        margin-right:0px;
+        margin-right:10px;
         height:150px;
 
         width: 150px;
