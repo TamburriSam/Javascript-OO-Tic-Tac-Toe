@@ -379,7 +379,7 @@ input[type=text] {
     .mainbox {
        top:0px;
        position:absolute;
-       width:400px;
+       width:500px;
        grid-column: 1/ span 2;
 
     }
@@ -427,7 +427,7 @@ input[type=text] {
     }
 
     .inputcontainer {
-        width:420px;
+        width:500px;
         margin:auto;
         position: absolute;
         left:0px;
@@ -463,4 +463,98 @@ input[type=text] {
    
 
 
+}
+
+
+
+
+@media only screen 
+    and (min-device-width: 375px) 
+    and (min-device-height: 812px) 
+    and (-webkit-device-pixel-ratio: 3)
+    and (orientation: portrait) { 
+        body{
+            grid-template-columns: repeat(3, 124px);
+            grid-template-rows: repeat( 3, 200px);
+            padding:0px;
+            justify-content: center;
+        }
+        .box {
+            width:100px;
+            height:100px;
+        }
+    
+        .mainbox {
+           top:0px;
+           position:absolute;
+           width:400px;
+           grid-column: 1/ span 2;
+    
+        }
+    
+        input[type=text] {
+            border-radius: 5px;
+            width:75px;
+            height:30px;
+            font-family: var(--main-font);
+        }
+    
+        .container {
+            width:70%;
+            grid-row:1/ span 2;
+            grid-column: 1/ span 2;
+            height:100px;
+            margin:auto;
+        }
+    
+        
+    
+       
+    
+        .fa-times::before {
+            display:none;
+        }
+    
+        .fa-circle::before {
+            display:none;
+        }
+    
+        .fa-times-circle::before{
+            display:none;
+        }
+    
+        #ttt {
+            grid-column:2;
+            left:-15px;
+            display:flex;
+            position: absolute;
+            margin-left: auto;
+            margin-right: auto;
+            bottom:110px;
+            justify-content: center;
+        }
+    
+        .inputcontainer {
+            width:420px;
+            margin:auto;
+            position: absolute;
+            left:0px;
+            top:200px;
+        }
+    
+        .playeronecard {
+            margin-right:10px;
+            height:150px;
+    
+            width: 150px;
+        }
+    
+        .playertwocard {
+            height:150px;
+            width: 150px;
+        }
+    
+        .mainbox > h1 {
+            font-size:50px;
+        }
 }
