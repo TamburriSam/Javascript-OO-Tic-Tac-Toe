@@ -106,12 +106,6 @@ const Game = (function () {
       play.innerHTML = '&nbsp' + playerName2.value;
       play.style.color = "orange";
       player2card.style.display = "none";
-      //make into class and add
-   /*    TicTacToe.style.position = "relative";
-      TicTacToe.style.bottom = "230px";
-      TicTacToe.style.display = "block";
-      TicTacToe.style.fontSize = "12px";
-      TicTacToe.style.position = "absolute"; */
       TicTacToe.style.gridColumn = '1';
       tttGameBoard.style.display = "grid";
       }else{

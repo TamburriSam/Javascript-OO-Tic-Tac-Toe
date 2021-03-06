@@ -356,7 +356,7 @@ input[type=text] {
 
 /* Media Queries */
 
-@media screen and (max-width:600px){
+/* @media screen and (max-width:600px){
     .box {
         width:100px;
         height:100px;
@@ -402,8 +402,8 @@ input[type=text] {
         margin-right:0px;
     }
 
-}
-
+} */
+/* 
  @media screen and (max-width:768px){
     .mainbox {
         position:absolute;
@@ -437,7 +437,7 @@ input[type=text] {
     }
 
    
-} 
+}  */
 
 
 @media screen and (device-width : 375px) and (device-height : 812px) 
@@ -461,11 +461,10 @@ input[type=text] {
 
     }
 
-@media screen and (min-height:861px){
+ @media screen and (min-height:861px){
     .othercontainer {
-    position: absolute;
-    top:300px
-}
+    margin-top:80px;
+} 
 
    
 
