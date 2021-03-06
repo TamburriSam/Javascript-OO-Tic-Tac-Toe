@@ -37,6 +37,11 @@ const Game = (function () {
   let won = [];
 
   const _getTurn = function () {
+    /////////////////////////////////
+    /////////////////////////////////
+    //////////////////////////////////
+    //turn_count(board) % 2 == 0 ? "X" : "O"
+
     if (count % 2 === 0) {
       Player1 = Player("X");
       count++;
@@ -102,11 +107,12 @@ const Game = (function () {
       play.style.color = "orange";
       player2card.style.display = "none";
       //make into class and add
-      TicTacToe.style.position = "relative";
+   /*    TicTacToe.style.position = "relative";
       TicTacToe.style.bottom = "230px";
       TicTacToe.style.display = "block";
       TicTacToe.style.fontSize = "12px";
-      TicTacToe.style.position = "absolute";
+      TicTacToe.style.position = "absolute"; */
+      TicTacToe.style.gridColumn = '1';
       tttGameBoard.style.display = "grid";
       }else{
         popUp.style.display="block"
@@ -171,6 +177,7 @@ const Game = (function () {
       winnerBox.style.display="none"
       for(i = 0 ; i < _showGame(GameBoard).length; i++){
         GameBoard[i].innerHTML = '';
+        //huhhhhhhhhhhhhh
         lets.innerHTML = playerName1.value + '&nbspvs&nbsp ';
         play.innerHTML = ' ' + playerName2.value;
       }
