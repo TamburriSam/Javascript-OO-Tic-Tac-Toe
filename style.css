@@ -401,9 +401,7 @@ input[type=text] {
 
     
 
-    .inputcontainer {
-        display:none;
-    }
+   
 
     .fa-times::before {
         display:none;
@@ -428,11 +426,11 @@ input[type=text] {
     }
 
     .inputcontainer {
-        width:300px;
+        width:500px;
         margin:auto;
         position: absolute;
         left:0px;
-        top:400px;
+        top:300px;
     }
 
     .playeronecard {
