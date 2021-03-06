@@ -150,6 +150,7 @@ body {
     display:flex;
     justify-content: center;
     grid-column: 1/ span 3;
+    z-index:40;
     
 }
 
@@ -292,6 +293,7 @@ input[type=text] {
     position: fixed;
     display:none;
     margin:auto;
+    z-index:1;
     transform: rotate(0.05turn);
    
 }
@@ -374,12 +376,12 @@ input[type=text] {
 
     .mainbox {
        top:0px;
-       position:absolute;
+       width:400px;
+       grid-column: 1/ span 2;
+
     }
 
-    .mainbox > h1 {
-        font-size: 70px;
-    }
+
 
     .container {
         width:60%;
@@ -415,7 +417,7 @@ input[type=text] {
     }
 
     .inputcontainer {
-        width:99%;
+        width:300px;
         margin:auto;
         position: absolute;
         left:0px;
@@ -424,8 +426,19 @@ input[type=text] {
 
     .playeronecard {
         margin-right:0px;
+        height:150px;
+
+        width: 150px;
     }
 
+    .playertwocard {
+        height:150px;
+        width: 150px;
+    }
+
+    .mainbox > h1 {
+        font-size:50px;
+    }
 } 
 
 
