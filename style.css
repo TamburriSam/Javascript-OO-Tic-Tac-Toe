@@ -1,6 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
 @import url("https://cdn.jsdelivr.net/gh/jgthms/minireset.css@master/minireset.min.css");
 
+*{
+    box-sizing: border-box;
+}
 
 :root {
     /* Colors */
@@ -356,7 +359,13 @@ input[type=text] {
 
 /* Media Queries */
 
-/* @media screen and (max-width:600px){
+ @media screen and (max-width:600px){
+
+    body{
+        grid-template-columns: repeat(3, 124px);
+        grid-template-rows: repeat( 3, 200px);
+        padding:0px;
+    }
     .box {
         width:100px;
         height:100px;
@@ -374,12 +383,28 @@ input[type=text] {
 
     .container {
         width:60%;
-        top:100px;
+        grid-row:1/ span 2;
+        grid-column: 1/ span 2;
         height:100px;
         position: relative;
         margin:auto;
-        
- 
+    }
+
+    .othercontainer {
+        grid-row:3;
+        margin-top:80px;
+    }
+
+    .fa-times::before {
+        display:none;
+    }
+
+    .fa-circle {
+        display:none;
+    }
+
+    .fa-times-circle{
+        display:none;
     }
 
     #ttt {
@@ -402,8 +427,8 @@ input[type=text] {
         margin-right:0px;
     }
 
-} */
-/* 
+} 
+
  @media screen and (max-width:768px){
     .mainbox {
         position:absolute;
@@ -437,30 +462,10 @@ input[type=text] {
     }
 
    
-}  */
+}  
 
 
-@media screen and (device-width : 375px) and (device-height : 812px) 
-    and (-webkit-device-pixel-ratio : 3) { 
-
-        .lets{
-            color:red;
-        }
-        .playeronecard {
-            margin-right:0px;
-        }
-
-        .container{
-            width:40%;
-            top:-90px;
-            margin-left:auto;
-            margin-right:auto;
-            position: absolute;
-           
-        }
-
-    }
-
+    /* big screens */
  @media screen and (min-height:861px){
     .othercontainer {
     margin-top:80px;
