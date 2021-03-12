@@ -13,6 +13,7 @@ const GameBoard = (function () {
   return gameArray;
 })();
 
+
 function _showGame(GameBoard) {
   let newGameArray = [];
   for (let i = 0; i < GameBoard.length; i++) {
@@ -206,3 +207,4 @@ const Game = (function () {
 
   return fullGame();
 })();
+
